@@ -1,0 +1,126 @@
+/* Fundo animado */
+body {
+  background: linear-gradient(-45deg, blue, black, blue);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Keyframes da animação */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Container do formulário */
+.form-container {
+  background-color: rgba(250, 250, 250, 0.1);
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px); /* Efeito vidro fosco */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100px;
+}
+
+/* Títulos e textos */
+.form-container h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.form-container p {
+  font-size: 1.3rem;
+  color: #cccccc;
+  margin-bottom: 20px;
+}
+
+/* Formulário */
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Inputs */
+.input-group input, input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1a1e3f;
+  color: #fff;
+  outline: none;
+}
+
+input::placeholder {
+  color: #fcfcfc;
+}
+
+/* Botão */
+button {
+  padding: 12px;
+  background-color: #2e6bff;
+  color: #080808;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffffff;
+}
+
+/* Media Query para telas menores (responsividade) */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+    top: 50px; /* Ajusta a posição para telas pequenas */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Deixa o formulário mais largo em telas pequenas */
+  }
+
+  .form-container h3 {
+    font-size: 1.4rem; /* Ajusta o tamanho do título */
+  }
+
+  .form-container p {
+    font-size: 1.1rem; /* Ajusta o tamanho do texto */
+  }
+
+  /* Ajusta o layout dos inputs no celular */
+  .input-group {
+    flex-direction: column; /* Coloca os inputs em uma coluna */
+    gap: 10px;
+  }
+
+  .input-group input {
+    width: 100%; /* Garante que os inputs ocupem toda a largura */
+  }
+
+  button {
+    font-size: 14px; /* Tamanho de fonte menor para o botão */
+  }
+}
